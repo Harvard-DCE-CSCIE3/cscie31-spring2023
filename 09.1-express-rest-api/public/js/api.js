@@ -17,11 +17,21 @@
       })
       .then(()=>{
         // create form data object with photo and metadata
+        // This section is for uploading a file to the REST API
         let input = document.querySelector('input[type="file"]')
         let data = new FormData()
         data.append('image', input.files[0]);
         data.append('title', 'My API Test Title');
         data.append('description','This is an AJAX API test');
+
+        // If you don't have a file upload component to your application, a simple JSON object will do
+        /**
+        let data = {
+          "title": "My API Test Title",
+          "description": "This is an AJAX API test"
+        }
+         */
+
         // create the POST call to the API
         callAPI('POST', '/api/photos', null, data)
           .then((photo)=>{
