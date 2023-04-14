@@ -24,12 +24,12 @@
         data.append('description','This is an AJAX API test');
 
         // If you don't have a file upload component to your application, a simple JSON object will do
-        /**
+        /*
         let data = {
           "title": "My API Test Title",
           "description": "This is an AJAX API test"
         }
-         */
+        */
         
         // create
         let newPhoto = await callAPI('POST', '/api/photos', null, data)
@@ -66,7 +66,7 @@
   async function callAPI(method, uri, params, body){
     jsonMimeType = {
       'Content-type':'application/json'
-    }
+     }
     try{
       /*  Set up our fetch.
        *   'body' to be included only when method is POST
